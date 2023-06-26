@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Signİn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model SignİnViewModel
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Kullanıcı Giriş Formu</h2>
+         <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert">
+    </div>
+        <form asp-controller="Home" asp-action="Signİn" asp-route-ReturnUrl="@Context.Request.Query["ReturnUrl"]" method="post">
+            <div class="mb-3">
+                <label for="Email" asp-for="Email">Email: </label>
+                <input class="form-control" asp-for="Email" placeholder="Lütfen Email Giriniz..">
+                <span class="text-danger" asp-validation-for="Email"></span>
+            </div>
+            <div class="mb-3">
+                <label for="Password">Şifre:</label>
+                <input type="password" class="form-control" asp-for="Password" placeholder="Password">
+                <span class="text-danger" asp-validation-for="Password"></span>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" asp-for="RememberMe">
+                <label class="form-check-label" for="RememberMe">Beni Hatırla</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Giriş</button>
+        </form>
+    </div>
+</div>

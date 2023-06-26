@@ -1,0 +1,30 @@
+﻿@using İdentityServer.Areas.Admin.Models;
+@using İdentityServer;
+@{
+    ViewData["Title"] = "UserList";
+}
+@model List<UserViewModel>
+<h1>UserList</h1>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class="w3-container">
+    <table class="w3-table-all w3-hoverable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>UserName</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
